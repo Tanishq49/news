@@ -1,0 +1,175 @@
+/* Importing a custom font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+/* Reset and basic styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar container styling */
+nav {
+  background-color: #000;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Branding / Logo styling */
+.mainName {
+  font-size: 34px;
+  background: linear-gradient(45deg, #E2B714, #55e214);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 900;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mainName:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation links container styling */
+.navBarLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Individual nav items styling */
+.navContents,
+.navContentsLeft {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navContents:hover,
+.navContentsLeft:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Optional: hamburger active state to rotate when clicked */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .mainName {
+    margin-left: 0;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  /* Show hamburger menu in mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide links by default in mobile view */
+  .navBarLinks {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 12px;
+    margin: 12px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  /* Toggle class (e.g., added via JavaScript) when mobile menu is open */
+  .navBarLinks.open {
+    max-height: 500px; /* Adjust as needed for the number of links */
+  }
+
+  .navContents,
+  .navContentsLeft {
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* Additional animations: subtle fade-in on load for nav links */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navBarLinks a {
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Delay animation for each nav link (if desired, you can apply multiple classes for sequential delays) */
+.navBarLinks a:nth-child(1) { animation-delay: 0.2s; }
+.navBarLinks a:nth-child(2) { animation-delay: 0.3s; }
+.navBarLinks a:nth-child(3) { animation-delay: 0.4s; }
+.navBarLinks a:nth-child(4) { animation-delay: 0.5s; }
+
+.cmp{
+  font-size: 15px;
+  color: #14bf89;
+}
+.cmp:hover{
+  color: #2d866a;
+}
